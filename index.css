@@ -1,0 +1,224 @@
+body {
+    background-color: #bfe1fe;
+    font-family: Arial, sans-serif;
+    height: 95vh;
+
+    font-family: "National Park", sans-serif;
+}
+
+button{
+    font-family: "National Park", sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: darkblue;
+    
+    text-shadow: 1px 3px 2px rgb(4, 196, 255);
+}
+.gameBTNs {
+    width: 20vmin;
+    height: 20vmin;
+    font-size: 13vmin;
+    /* color: #0ab900;  ////////// #b98800 , #0086b9 , #0ab900 */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 5px;
+    /* border-radius: 10px; */
+    background-color: #a2e0fa;
+    border: 3px solid #007bff;
+}
+#game-board {
+    justify-self: center;
+    background-color: darkblue;
+    border-radius: 20px;
+    padding: 10px;
+
+    display: none;
+}
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+
+.first_Player , .second_Player{
+    font-size: 3.5vmin;
+}
+
+input{
+    margin-left: 10px;
+    width: 25vmax;
+    background-color: rgb(251, 231, 164);
+    border: none;
+    border-bottom: 2px solid rgb(255, 123, 0);
+    color: chocolate;
+
+    font-family: "National Park", sans-serif;
+    font-weight: 600;
+}
+
+input:focus{
+    outline: none;
+}
+
+@media screen and (max-width: 745px) {
+    input{
+        width: 25vmin;
+    }
+
+    .players{
+        justify-content: start;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .P_lables{
+        font-size: 5vmin;
+        /* justify-self: anchor-center; */
+    }
+
+    .players{
+        display: grid;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .first_Player , .second_Player{
+        font-size: 5vmin;
+        width: 100%;
+    }
+
+    input{
+        margin: 0;
+    }
+}
+
+.players{
+    justify-self: center;
+    padding: 2vmin;
+}
+
+.P_lables{
+    background-color: burlywood;
+    color: brown;
+    padding: 7px;
+    border-radius: 6px;
+
+    justify-self: anchor-center;
+}
+
+#name_container{
+    background-color: rgb(251, 231, 164);
+    border-radius: 15px;
+    justify-self: center;
+    width: 80%;
+    padding: 4vmin 15px;
+}
+
+#start-game , #resetBTN{
+    display: block;
+    justify-self: center;
+    margin-top: 50px;
+    padding: 1.5vmax;
+    font-size: 2.5vmax;
+    border-radius: 20px;
+    color: darkgreen;  
+    background-color: #27f11d;
+    border: 2px solid rgb(6, 148, 16);
+}
+
+#rePlayBTN{
+    display: block;
+    justify-self: center;
+    margin-top: 50px;
+    padding: 1.5vmax;
+    font-size: 2.5vmax;
+    border-radius: 20px;
+    color: rgb(93, 100, 0);  
+    background-color: #f1ed1d;
+    border: 2px solid rgb(127, 148, 6);
+}
+
+#rePlayBTN:active{
+    /* border: 5px solid rgb(127, 148, 6); */
+    transform: scale(0.8);
+}
+#resetBTN{
+    position: relative;
+    bottom: 40px;
+    margin: 100px 0;
+}
+
+#start-game:active , #resetBTN:active{
+    border: 5px solid rgb(6, 148, 16);
+}
+
+#Player-1, #Player-2, #Tie{
+    font-size: 4vmin;
+    padding: 2vmin;
+}
+
+#Tie{
+    margin-top: 15px;
+}
+
+#current-Player{
+    justify-self: center;
+    padding: 3vmin;
+    font-size: 4vmin;
+    border-radius: 9px;
+}
+
+.show-popup {
+    opacity: 1;
+    transform: scale(1.05);
+    animation: popup-bounce 0.40s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes popup-bounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+    80% {
+        transform: scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+.show-win-animation {
+    animation: popup-bounce-symbol 1.5s ease-in-out infinite;
+}
+
+@keyframes popup-bounce-symbol {
+    0% {
+        font-size: 12vmin;
+    }
+    20% {
+        font-size: 10vmin;
+    }
+    80% {
+        font-size: 15vmin;
+    }
+    100% {
+        font-size: 13vmin;
+    }
+}
+
+span{
+    background-color: #fcfbb5;
+    color: orangered;
+    padding: 1vmin 2vmin;
+    border-radius: 5px;
+    margin-left: 2vmin;
+}
