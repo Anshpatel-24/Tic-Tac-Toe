@@ -35,8 +35,4 @@ A simple, interactive Tic Tac Toe game built with HTML, CSS, and JavaScript.
 
 ## Screenshots
 
-![Tic Tac Toe Screenshot](Tic_Tac_Toe.png) <!-- Add a screenshot if available -->
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+![Tic Tac Toe Screenshot](Tic_Tac_Toe.png)
