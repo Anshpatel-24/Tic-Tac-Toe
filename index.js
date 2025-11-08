@@ -1,6 +1,6 @@
 /* index.js
    Shared by home and game pages.
-   - home.html uses only its inline script for mode selection
+   - index.html uses only its inline script for mode selection
    - game.html loads this file to run the actual game
 */
 
@@ -36,7 +36,7 @@ let tie = 0;
   if (!storedMode || !storedP1) {
     // nothing set — send user back to home
     alert('No game mode selected. Redirecting to home.');
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
     return;
   }
 
@@ -366,5 +366,6 @@ function backToHome() {
   localStorage.removeItem('ttt_p1');
   localStorage.removeItem('ttt_p2');
 
-  window.location.href = 'home.html';
+  window.location.href = 'index.html';
 }
+
