@@ -2,6 +2,7 @@ body {
     background-color: #bfe1fe;
     font-family: Arial, sans-serif;
     height: 95vh;
+    padding-bottom: 50px;
 
     font-family: "National Park", sans-serif;
 }
@@ -24,16 +25,16 @@ h1 {
     font-size: 13vmin;
     /* color: #0ab900;  ////////// #b98800 , #0086b9 , #0ab900 */
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 5px;
-    /* border-radius: 10px; */
+    margin: 1vmin;
+    border-radius: 2vmin;
     background-color: #a2e0fa;
-    border: 3px solid #007bff;
+    border: 1vmin solid #007bff;
 }
 #game-board {
     justify-self: center;
     background-color: darkblue;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 3vmin;
+    padding: 1.5vmin;
 
     display: none;
 }
@@ -43,14 +44,14 @@ h1 {
 }
 
 
-.first_Player , .second_Player{
+.first_Player , .second_Player, .mode_lable{
     font-size: 3.5vmin;
 }
 
-input{
+.players_input_style{
     margin-left: 10px;
     width: 25vmax;
-    background-color: rgb(251, 231, 164);
+    background-color: #fff6d9;
     border: none;
     border-bottom: 2px solid rgb(255, 123, 0);
     color: chocolate;
@@ -59,28 +60,28 @@ input{
     font-weight: 600;
 }
 
-input:focus{
+.players_input_style:focus{
     outline: none;
 }
 
 @media screen and (max-width: 745px) {
-    input{
+    .players_input_style{
         width: 25vmin;
     }
 
-    .players{
+    .players, .mode_container{
         justify-content: start;
         width: 100%;
     }
 }
 
-@media screen and (max-width: 515px) {
+@media screen and (max-width: 542px) {
     .P_lables{
         font-size: 5vmin;
         /* justify-self: anchor-center; */
     }
 
-    .players{
+    .players, .mode_container{
         display: grid;
         gap: 10px;
         justify-content: center;
@@ -91,12 +92,24 @@ input:focus{
         width: 100%;
     }
 
-    input{
+    .mode_lable{
+        font-size: 5vmin;
+    }
+
+    .players_input_style{
         margin: 0;
     }
 }
 
 .players{
+    justify-self: center;
+    padding: 2vmin;
+}
+
+.mode_container{
+    /* display: flex;
+    justify-content: space-evenly; */
+
     justify-self: center;
     padding: 2vmin;
 }
@@ -111,20 +124,24 @@ input:focus{
 }
 
 #name_container{
-    background-color: rgb(251, 231, 164);
+    /* background-color: rgb(251, 231, 164); */
+    background-color: #fff6d9;
     border-radius: 15px;
     justify-self: center;
     width: 80%;
     padding: 4vmin 15px;
+
+    border: 1vmin solid saddlebrown;
+    /* border: 1vmin solid #ffd78a; */
 }
 
-#start-game , #resetBTN{
+#start-game , #resetBTN , #goToGame{
     display: block;
     justify-self: center;
     margin-top: 50px;
-    padding: 1.5vmax;
-    font-size: 2.5vmax;
-    border-radius: 20px;
+    padding: 1vmax 1.5vmax;
+    font-size: 5vmin;
+    border-radius: 2vmin;
     color: darkgreen;  
     background-color: #27f11d;
     border: 2px solid rgb(6, 148, 16);
@@ -135,11 +152,18 @@ input:focus{
     justify-self: center;
     margin-top: 50px;
     padding: 1.5vmax;
-    font-size: 2.5vmax;
-    border-radius: 20px;
+    font-size: 4vmin;
+    border-radius: 3vmin;
     color: rgb(93, 100, 0);  
     background-color: #f1ed1d;
     border: 2px solid rgb(127, 148, 6);
+}
+
+#rePlayBTN:hover{
+    transform: scale(1.1);
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    border: 3px solid rgb(127, 148, 6);
 }
 
 #rePlayBTN:active{
@@ -152,7 +176,17 @@ input:focus{
     margin: 100px 0;
 }
 
-#start-game:active , #resetBTN:active{
+#start-game:hover , #resetBTN:hover , #goToGame:hover{
+    transform: scale(1.1);
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    border: 3px solid rgb(6, 148, 16);
+}
+
+#start-game:active , #resetBTN:active , #goToGame:active{
+    transform: scale(0.9);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
     border: 5px solid rgb(6, 148, 16);
 }
 
@@ -221,4 +255,88 @@ span{
     padding: 1vmin 2vmin;
     border-radius: 5px;
     margin-left: 2vmin;
+}
+
+
+.home-container {
+    text-align: center;
+    background: #fff;
+    padding: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+fieldset {
+    border: 3px solid #f0bf2b;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+legend {
+    font-weight: bold;
+    color: #444;
+}
+
+fieldset div {
+    margin: 10px 0;
+}
+
+label {
+    font-size: 3vmin;
+    color: chocolate;
+}
+
+.label_marginL{
+    margin-left: 8px;
+    font-weight: 300;
+}
+
+.game_mode_section{
+    background-color: burlywood;
+    color: brown;
+    padding: 7px;
+    border-radius: 6px;
+
+    justify-self: anchor-center;
+}
+
+#mode-banner{
+    background-color: #29b8f6;
+    padding: 2vmin;
+    justify-self: center;
+    border-radius: 2vmin;
+    color: #014894;
+    font-weight: 600;
+    font-size: 4vmin;
+}
+
+input[type="radio"] {
+  appearance: none; 
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="radio"]:checked {
+  border-color: orangered;
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 10px; 
+  height: 10px;
+  background-color: orangered;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
