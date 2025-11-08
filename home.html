@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic Tac Toe — Choose Mode</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+
+    <div id="home-container">
+      <div id="name_container">
+        <!-- Mode selection with radio buttons -->
+        <div class="mode_container">
+          <fieldset>
+            <legend class="mode_lable game_mode_section">
+              Choose Game Mode :
+            </legend>
+
+            <div>
+              <input type="radio" id="pvp" name="mode" value="pvp" checked />
+              <label class="mode_lable label_marginL" for="pvp"
+                >Player vs Player</label
+              >
+            </div>
+
+            <div>
+              <input type="radio" id="ai" name="mode" value="ai" />
+              <label class="mode_lable label_marginL" for="ai"
+                >Player vs AI</label
+              >
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="players">
+          <label id="p1home" class="P_lables first_Player" for="home_player1">
+            Enter 1<sup>st</sup> Player Name (X) :
+          </label>
+          <input
+            class="first_Player players_input_style"
+            type="text"
+            id="home_player1"
+          />
+        </div>
+
+        <div class="players" id="p2home">
+          <label class="P_lables second_Player" for="home_player2">
+            Enter 2<sup>nd</sup> Player Name (O) :
+          </label>
+          <input
+            class="second_Player players_input_style"
+            type="text"
+            id="home_player2"
+          />
+        </div>
+
+        <div style="margin-top: 1.5rem">
+          <button id="goToGame" onclick="goToGame()">Start</button>
+        </div>
+
+        <p style="margin-top: 12px; color: #003366; font-weight: 600">
+          Note : In <strong>Player vs AI</strong> mode, you are <em>X</em> and
+          AI is <em>O</em>.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const modeRadios = document.querySelectorAll('input[name="mode"]');
+      const p1home = document.getElementById("p1home");
+      const p2home = document.getElementById("p2home");
+
+      // Handle showing/hiding player2 input
+      modeRadios.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          if (document.getElementById("ai").checked) {
+            p1home.innerText = "Enter Your Name (X) :";
+            p2home.style.display = "none";
+          } else {
+            p1home.innerHTML = `Enter 1<sup>st</sup> Player Name (X) :`;
+            p2home.style.display = "block";
+          }
+        });
+      });
+
+      // Initial check
+      if (document.getElementById("ai").checked) p2home.style.display = "none";
+
+      function goToGame() {
+        const mode = document.querySelector('input[name="mode"]:checked').value;
+        const p1 = document.getElementById("home_player1").value.trim();
+        const p2 = document.getElementById("home_player2").value.trim();
+
+        if (mode === "pvp") {
+          if (!p1 || !p2) {
+            alert("Please enter names for both players (Player vs Player).");
+            return;
+          }
+        } else {
+          if (!p1) {
+            alert("Please enter Player name (AI will play as O).");
+            return;
+          }
+        }
+
+        // store values
+        localStorage.setItem("ttt_mode", mode);
+        localStorage.setItem("ttt_p1", p1);
+        localStorage.setItem("ttt_p2", mode === "ai" ? "Computer (AI)" : p2);
+
+        // go to game
+        window.location.href = "game.html";
+      }
+    </script>
+  </body>
+</html>
