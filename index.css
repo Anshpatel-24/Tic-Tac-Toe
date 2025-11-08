@@ -173,7 +173,7 @@ h1 {
 #resetBTN{
     position: relative;
     bottom: 40px;
-    margin: 100px 0;
+    margin: 70px 0;
 }
 
 #start-game:hover , #resetBTN:hover , #goToGame:hover{
@@ -340,3 +340,4 @@ input[type="radio"]:checked::before {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
