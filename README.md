@@ -1,37 +1,53 @@
 # Tic Tac Toe
 
-A simple, interactive Tic Tac Toe game built with HTML, CSS, and JavaScript.
+An interactive Tic Tac Toe game built with HTML, CSS, and JavaScript, featuring both Player vs Player and Player vs AI modes.
+
+## Live Demo
+
+[Play Tic Tac Toe](https://anshpatel-24.github.io/Tic-Tac-Toe/)
 
 ## Features
 
-- Two-player mode with custom player names.
-- Tracks and displays each player's winning score.
-- Tie match counter.
-- Animated win and result popups.
-- Responsive design for desktop and mobile devices.
-- Replay and restart functionality.
+- Two game modes:
+  - Player vs Player (PvP)
+  - Player vs AI
+- Custom player names
+- Score tracking system
+- Tie game counter
+- Animated win notifications
+- Responsive design for all devices
+- Replay and restart functionality
+- Modern UI with smooth animations
 
-## Getting Started
+## Technologies Used
 
-### Prerequisites
+- HTML5
+- CSS3 (with Flexbox and CSS Grid)
+- JavaScript (ES6+)
+- Local Storage for game state management
 
-- A modern web browser (Chrome, Firefox, Edge, etc.)
+## Game Modes
 
-### Running the Game : https://anshpatel-24.github.io/Tic-Tac-Toe/
+### Player vs Player
 
-### File Structure
+- Two players take turns
+- Custom names for both players
+- Track wins for each player
 
-- `index.html` — Main HTML file for the game UI.
-- `index.css` — Stylesheet for layout and animations.
-- `index.js` — JavaScript logic for game functionality.
+### Player vs AI
+
+- Play against the computer
+- Single player name entry
+- AI plays as 'O'
 
 ## How to Play
 
-1. Enter names for both players (Player 1 is "X", Player 2 is "O").
-2. Click **Start Game**.
-3. Take turns clicking the grid to place your symbol.
-4. The game announces the winner or a tie.
-5. Use **Replay** to play again with the same names and scores, or **Restart Game** to reset everything.
+1. Select game mode (PvP or AI)
+2. Enter player name(s)
+3. Click "Start Game"
+4. Take turns placing X's and O's
+5. First to get three in a row wins
+6. Use "Replay" for another round or "Restart" for a fresh start
 
 ## Screenshots
 
