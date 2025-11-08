@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic Tac Toe — Game</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+
+  <div id="name_container">
+    <div class="players" id="p1container">
+      <!-- filled by JS -->
+    </div>
+
+    <div class="players" id="p2container">
+      <!-- filled by JS -->
+    </div>
+
+    <div class="P_lables" id="Tie" style="display: none;"></div>
+  </div>
+
+  <div id="mode-banner" style="text-align:center; margin-top: 20px;"></div>
+
+  <button id="start-game" onclick="GameStart()">Start Game</button>
+
+  <p id="current-Player" style="display: none;"></p>
+
+  <div id="game-board">
+    <div class="row">
+      <button class="gameBTNs" id="gBTN-1" onclick="pressBTN('gBTN-1')"></button>
+      <button class="gameBTNs" id="gBTN-2" onclick="pressBTN('gBTN-2')"></button>
+      <button class="gameBTNs" id="gBTN-3" onclick="pressBTN('gBTN-3')"></button>
+    </div>
+    <div class="row">
+      <button class="gameBTNs" id="gBTN-4" onclick="pressBTN('gBTN-4')"></button>
+      <button class="gameBTNs" id="gBTN-5" onclick="pressBTN('gBTN-5')"></button>
+      <button class="gameBTNs" id="gBTN-6" onclick="pressBTN('gBTN-6')"></button>
+    </div>
+    <div class="row">
+      <button class="gameBTNs" id="gBTN-7" onclick="pressBTN('gBTN-7')"></button>
+      <button class="gameBTNs" id="gBTN-8" onclick="pressBTN('gBTN-8')"></button>
+      <button class="gameBTNs" id="gBTN-9" onclick="pressBTN('gBTN-9')"></button>
+    </div>
+  </div>
+
+  <footer>
+    <button id="rePlayBTN" style="display: none;" onclick="GameStart()">Replay</button>
+    <button id="resetBTN" style="display: none;" onclick="backToHome()">Restart / Home</button>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
